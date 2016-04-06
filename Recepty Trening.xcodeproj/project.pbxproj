@@ -15,6 +15,10 @@
 		CE961D8F1CB551A300F55F71 /* RecipiesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE961D8E1CB551A300F55F71 /* RecipiesListViewController.m */; };
 		CE961D981CB5575D00F55F71 /* RecipiesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE961D961CB5575D00F55F71 /* RecipiesListCell.m */; };
 		CE961D991CB5575D00F55F71 /* RecipiesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE961D971CB5575D00F55F71 /* RecipiesListCell.xib */; };
+		CE961D9E1CB5696600F55F71 /* RecipiesDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE961D9D1CB5696600F55F71 /* RecipiesDetailsViewController.m */; };
+		CE961DA41CB56DF100F55F71 /* AllRecipiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE961DA31CB56DF100F55F71 /* AllRecipiesViewController.m */; };
+		CE961DA81CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE961DA61CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.m */; };
+		CE961DA91CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE961DA71CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,13 @@
 		CE961D951CB5575D00F55F71 /* RecipiesListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipiesListCell.h; sourceTree = "<group>"; };
 		CE961D961CB5575D00F55F71 /* RecipiesListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipiesListCell.m; sourceTree = "<group>"; };
 		CE961D971CB5575D00F55F71 /* RecipiesListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipiesListCell.xib; sourceTree = "<group>"; };
+		CE961D9C1CB5696600F55F71 /* RecipiesDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipiesDetailsViewController.h; sourceTree = "<group>"; };
+		CE961D9D1CB5696600F55F71 /* RecipiesDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipiesDetailsViewController.m; sourceTree = "<group>"; };
+		CE961DA21CB56DF100F55F71 /* AllRecipiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllRecipiesViewController.h; sourceTree = "<group>"; };
+		CE961DA31CB56DF100F55F71 /* AllRecipiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllRecipiesViewController.m; sourceTree = "<group>"; };
+		CE961DA51CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllRecipiesCollectionViewCell.h; sourceTree = "<group>"; };
+		CE961DA61CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllRecipiesCollectionViewCell.m; sourceTree = "<group>"; };
+		CE961DA71CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllRecipiesCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +74,8 @@
 		CE961D721CB54D6400F55F71 /* Recepty Trening */ = {
 			isa = PBXGroup;
 			children = (
+				CE961D9F1CB56DA500F55F71 /* AllRecipies */,
+				CE961D9A1CB5690C00F55F71 /* RecipiesDetails */,
 				CE961D8A1CB5513400F55F71 /* RecipiesList */,
 				CE961D771CB54D6400F55F71 /* AppDelegate.m */,
 				CE961D761CB54D6400F55F71 /* AppDelegate.h */,
@@ -107,6 +120,51 @@
 				CE961D951CB5575D00F55F71 /* RecipiesListCell.h */,
 				CE961D961CB5575D00F55F71 /* RecipiesListCell.m */,
 				CE961D971CB5575D00F55F71 /* RecipiesListCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		CE961D9A1CB5690C00F55F71 /* RecipiesDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CE961D9B1CB5694700F55F71 /* ViewController */,
+			);
+			name = RecipiesDetails;
+			sourceTree = "<group>";
+		};
+		CE961D9B1CB5694700F55F71 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE961D9C1CB5696600F55F71 /* RecipiesDetailsViewController.h */,
+				CE961D9D1CB5696600F55F71 /* RecipiesDetailsViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		CE961D9F1CB56DA500F55F71 /* AllRecipies */ = {
+			isa = PBXGroup;
+			children = (
+				CE961DA11CB56DC200F55F71 /* Cell */,
+				CE961DA01CB56DBA00F55F71 /* ViewController */,
+			);
+			name = AllRecipies;
+			sourceTree = "<group>";
+		};
+		CE961DA01CB56DBA00F55F71 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE961DA21CB56DF100F55F71 /* AllRecipiesViewController.h */,
+				CE961DA31CB56DF100F55F71 /* AllRecipiesViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		CE961DA11CB56DC200F55F71 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE961DA51CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.h */,
+				CE961DA61CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.m */,
+				CE961DA71CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -168,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE961DA91CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.xib in Resources */,
 				CE961D831CB54D6400F55F71 /* LaunchScreen.storyboard in Resources */,
 				CE961D991CB5575D00F55F71 /* RecipiesListCell.xib in Resources */,
 				CE961D801CB54D6400F55F71 /* Assets.xcassets in Resources */,
@@ -183,8 +242,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE961D8F1CB551A300F55F71 /* RecipiesListViewController.m in Sources */,
+				CE961DA81CB56E1E00F55F71 /* AllRecipiesCollectionViewCell.m in Sources */,
 				CE961D981CB5575D00F55F71 /* RecipiesListCell.m in Sources */,
+				CE961D9E1CB5696600F55F71 /* RecipiesDetailsViewController.m in Sources */,
 				CE961D781CB54D6400F55F71 /* AppDelegate.m in Sources */,
+				CE961DA41CB56DF100F55F71 /* AllRecipiesViewController.m in Sources */,
 				CE961D751CB54D6400F55F71 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
