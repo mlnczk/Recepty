@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RecipiesListCell.h"
 
-@interface RecipiesListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, cellDelegate>
+@interface RecipiesListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, cellDelegate, UIAlertViewDelegate>
 
 
 @end

@@ -22,6 +22,7 @@
 
 
 
+
 @end
 
 @implementation RecipiesListViewController
@@ -35,6 +36,23 @@
     self.recipesArray = [[NSArray alloc] initWithObjects:@"recipe1", @"recipe2", @"recipe3", @"recipe4", @"recipe5", nil];
     
     self.namesArray = [[NSArray alloc] initWithObjects:@"Burger", @"HotDog", @"Spaghetti", @"Muffin", @"ciastko?", nil];
+    
+    
+    // userdefault, tworzenie dictionary i klucze!
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults ];
+    NSMutableDictionary *dict = [defaults objectForKey:@"KLUCZ"];
+    
+    if (!dict) {
+        dict = [NSMutableDictionary new];
+        [dict setObject:@"dupa dupa" forKey:@"zapisanaNazwa"];
+        [defaults setObject:dict forKey:@"KLUCZ"];
+        [defaults synchronize];
+        
+    }else{
+        self.labelText.text = [NSString stringWithFormat:@"%@",[dict objectForKey:@"zapisanaNazwa"]];
+        
+    }
  
 }
 
@@ -46,7 +64,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RecipiesListCell *cell = [tableView dequeueReusableCellWithIdentifier:[[RecipiesListCell class] description]];
     //TWORZENIE RZEDOW ODWOLUJESZ SIE DO XIB
-    [cell customizeWithTitle: self.recipesArray[indexPath.row] name: self.namesArray[indexPath.row]];
+    [cell customizeWithTitle: self.recipesArray[indexPath.row] name: self.namesArray[indexPath.row] index:indexPath];
     cell.delegate = self;
     return cell;
 }
@@ -68,9 +86,59 @@
 - (IBAction)buttonClicked:(id)sender {
     [self performSegueWithIdentifier:@"showAllRecipies" sender:self];
 }
--(void)sendLabelText{
-    
+-(void)sendIndexPath:(NSIndexPath *)indexPath{
+    self.labelText.text = [NSString stringWithFormat:@"%li", indexPath.row];
+    if (indexPath.row == 4){
+        
+//        [self allertPop];
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:@"alertTitle"
+                                              message:@"alertMessage"
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAction = [UIAlertAction
+                                       actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                       style:UIAlertActionStyleCancel
+                                       handler:^(UIAlertAction *action)
+                                       {
+                                           NSLog(@"Cancel action");
+                                       }];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       
+                                       self.labelText.text = @"asdada";
+                                   }];
+        
+        [alertController addAction:cancelAction];
+        [alertController addAction:okAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
+
+
+
+//-(void)allertPop{
+//    
+//    UIAlertView *alertView = [[UIAlertView alloc]
+//                              initWithTitle:@"DefaultStyle"
+//                              message:@"the default alert view style"
+//                              delegate:self
+//                              cancelButtonTitle:@"Cancel"
+//                              otherButtonTitles:@"OK", nil];
+//    
+//    [alertView show];
+//    
+//}
+//-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+//    if(buttonIndex == 1){
+//        self.labelText.text = @"hfgcfggv";
+//    }
+//}
 
 
 #pragma mark - Navigation

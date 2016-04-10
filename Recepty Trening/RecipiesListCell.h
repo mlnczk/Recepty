@@ -10,7 +10,7 @@
 
 @protocol cellDelegate <NSObject>
 
--(void)sendLabelText;
+-(void)sendIndexPath:(NSIndexPath *)indexPath;
 
 
 @end
@@ -18,7 +18,7 @@
 @interface RecipiesListCell : UITableViewCell
 @property (nonatomic, weak)id<cellDelegate>delegate;
 
--(void)customizeWithTitle:(NSString *)title name:(NSString *)name;
+-(void)customizeWithTitle:(NSString *)title name:(NSString *)name index:(NSIndexPath *)index;
 
 
 @end
