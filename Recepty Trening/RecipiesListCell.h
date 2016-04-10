@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol cellDelegate <NSObject>
+
+-(void)sendLabelText;
+
+
+@end
+
 @interface RecipiesListCell : UITableViewCell
+@property (nonatomic, weak)id<cellDelegate>delegate;
 
 -(void)customizeWithTitle:(NSString *)title name:(NSString *)name;
 

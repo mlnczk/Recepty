@@ -46,6 +46,12 @@
                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bOg-HA-vWe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6T-2j-Z6D">
+                                <rect key="frame" x="538" y="72" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.98804166666666671" green="0.98804166666666671" blue="0.98804166666666671" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.22352941179999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -54,11 +60,13 @@
                             <constraint firstItem="Z7D-VW-mxc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bcj-ZR-zHa"/>
                             <constraint firstItem="umH-yI-rBP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FHW-qj-aOr"/>
                             <constraint firstItem="9Bq-kC-Jbi" firstAttribute="top" secondItem="Z7D-VW-mxc" secondAttribute="bottom" constant="1" id="JCY-nk-h90"/>
+                            <constraint firstAttribute="trailing" secondItem="R6T-2j-Z6D" secondAttribute="trailing" constant="20" id="JoU-ON-6IN"/>
                             <constraint firstAttribute="trailing" secondItem="Z7D-VW-mxc" secondAttribute="trailing" id="QKW-mx-NAg"/>
                             <constraint firstAttribute="trailing" secondItem="umH-yI-rBP" secondAttribute="trailing" id="fGq-VO-ybW"/>
                             <constraint firstItem="Z7D-VW-mxc" firstAttribute="top" secondItem="umH-yI-rBP" secondAttribute="bottom" id="hdi-xV-0l9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Bq-kC-Jbi" secondAttribute="bottom" id="jBm-xA-yZB"/>
                             <constraint firstItem="umH-yI-rBP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rux-rh-Ek5"/>
+                            <constraint firstItem="R6T-2j-Z6D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="uUN-bu-ZQZ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -68,6 +76,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="r3R-4p-C1O"/>
                     <connections>
+                        <outlet property="labelText" destination="R6T-2j-Z6D" id="HG0-yB-cKa"/>
                         <outlet property="recipesTitle" destination="umH-yI-rBP" id="RxU-Eg-dne"/>
                         <outlet property="tableView" destination="Z7D-VW-mxc" id="P7z-8a-zdy"/>
                         <segue destination="5MS-pU-z14" kind="show" identifier="showAllRecipies" id="fW5-8X-tF5"/>

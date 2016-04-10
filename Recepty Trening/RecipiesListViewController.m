@@ -18,6 +18,7 @@
 @property (nonatomic, strong)NSArray *namesArray;
 @property (nonatomic, strong)NSString *selectedTitle;
 @property (nonatomic, strong)NSString *selectedName;
+@property (weak, nonatomic) IBOutlet UILabel *labelText;
 
 
 
@@ -46,6 +47,7 @@
     RecipiesListCell *cell = [tableView dequeueReusableCellWithIdentifier:[[RecipiesListCell class] description]];
     //TWORZENIE RZEDOW ODWOLUJESZ SIE DO XIB
     [cell customizeWithTitle: self.recipesArray[indexPath.row] name: self.namesArray[indexPath.row]];
+    cell.delegate = self;
     return cell;
 }
 
@@ -65,6 +67,9 @@
 
 - (IBAction)buttonClicked:(id)sender {
     [self performSegueWithIdentifier:@"showAllRecipies" sender:self];
+}
+-(void)sendLabelText{
+    
 }
 
 

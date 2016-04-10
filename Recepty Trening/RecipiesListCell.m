@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageRecipe;
 
 
+
 @end
 @implementation RecipiesListCell
 
@@ -28,5 +29,8 @@
 -(void)customizeWithTitle:(NSString *)title name:(NSString *)name{
     self.labelTitle.text = name;
     self.imageRecipe.image = [UIImage imageNamed:title];
+}
+- (IBAction)buttonTapped:(id)sender {
+    [self.delegate sendLabelText];
 }
 @end
